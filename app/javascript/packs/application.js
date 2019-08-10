@@ -9,7 +9,3 @@ initSelect2();
 $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
 });
-
-$('#my-select-2').select2({
-    dropdownParent: $('#parent')
-});
