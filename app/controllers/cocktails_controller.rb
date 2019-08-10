@@ -1,13 +1,15 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.all.order(:name)
   end
 
   def show
+    @cocktails = Cocktail.all.order(:name)
     @cocktail = Cocktail.find(params[:id])
   end
 
   def new
+    @cocktails = Cocktail.all.order(:name)
     @cocktail = Cocktail.new
   end
 

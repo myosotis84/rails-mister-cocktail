@@ -1,3 +1,31 @@
 // Place all the styles related to the Cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  width: 40vw;
+  min-width: 300px;
+}
+
+#add-ingredient {
+  font-size: 1rem;
+  margin-left: 8px;
+  font-family: 'Red Hat Text';
+}
+
+.container {
+  padding: 0 24px;
+  margin: 16px, auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  margin-top: 24px;
+}

@@ -1,19 +1,20 @@
-<div class="container">
-  <h1>Delicious cocktails</h1>
-  <p><%= link_to "Create a cocktail", new_cocktail_path %></p>
-<!--   <ul>
-    <% @cocktails.each do |cocktail| %>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <% end %>
-  </ul> -->
-
-
-  <div class="cards">
-    <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail), class: 'card-category', style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80)" do %>
-        <%= cocktail.name %>
+<div class="container" id="top-of-list">
+  <div class="d-flex justify-content-center my-4">
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card" style="width: 14rem;">
+          <%= cl_image_tag cocktail.photo, height: 200, width: 200, crop: :fill, class:'card-img-top' %>
+          <div class="card-body">
+            <%= link_to cocktail.name, cocktail_path(cocktail), class:'card-text' %>
+          </div>
+        </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
-
+  <div class="d-flex justify-content-center my-4">
+    <%= link_to "Create a cocktail", new_cocktail_path, class:"btn btn-primary" %>
+  </div>
+  <div class="d-flex justify-content-center my-4">
+    <a href="#top-of-list">Back to top</a>
+  </div>
 </div>

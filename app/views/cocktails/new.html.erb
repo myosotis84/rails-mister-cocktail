@@ -1,9 +1,16 @@
-<div class="container">
+<div class="container d-flex flex-column align-items-center">
   <h1>Add a new cocktail</h1>
-  <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Create cocktail", class: "btn btn-primary" %>
-  <% end %>
+  <div class="d-flex flex-column align-items-center">
+    <div class="form">
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Create cocktail", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+    <p><%= link_to "Back to list", root_path %></p>
+  </div>
 </div>

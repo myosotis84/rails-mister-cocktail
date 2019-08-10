@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><i class="fas fa-cocktail"></i> Cocktail Fair</a>
+  <div class="navbar-nav d-flex flex-row">
+    <div class="nav-item dropdown active">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Cocktails</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <% @cocktails.each do |cocktail| %>
+          <%= link_to cocktail.name, cocktail_path(cocktail), class:"dropdown-item" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="cl-effect-12">
+      <a class="nav-item nav-link active" href="/cocktails/new">Add one</a>
+    </div>
+  </div>
+</nav>

@@ -1,9 +1,15 @@
 <div class="container">
   <h1>Add an ingredient to <%= @cocktail.name %></h1>
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :description %>
-    <%= f.submit "Add ingredient to cocktail", class: "btn btn-primary"%>
-  <% end %>
-  <p><%= link_to "Back to cocktail page", cocktail_path(@cocktail) %></p>
+  <div class="d-flex flex-column align-items-center">
+    <div class="form">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.association :ingredient, collection: Ingredient.all.order(:name), include_hidden: false, input_html: { class: "ingredient-select" } %>
+        <%= f.input :description %>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Add this ingredient", class: "btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
+    <p><%= link_to "Back to cocktail page", cocktail_path(@cocktail) %></p>
+  </div>
 </div>
