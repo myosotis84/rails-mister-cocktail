@@ -9,3 +9,9 @@ initSelect2();
 $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
 });
+
+$('select:not(.normal)').each(function () {
+                $(this).select2({
+                    dropdownParent: $(this).parent()
+                });
+            });
