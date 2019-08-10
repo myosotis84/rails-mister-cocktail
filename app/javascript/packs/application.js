@@ -10,8 +10,6 @@ $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
 });
 
-$('select:not(.normal)').each(function () {
-                $(this).select2({
-                    dropdownParent: $(this).parent()
-                });
-            });
+$('#my-select-2').select2({
+    dropdownParent: $('#parent')
+});
