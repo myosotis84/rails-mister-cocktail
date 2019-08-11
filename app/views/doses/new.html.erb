@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Add an ingredient to <%= @cocktail.name %></h1>
   <div class="d-flex flex-column align-items-center">
-    <div class="form">
+    <div class="form" id="parent">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.association :ingredient, collection: Ingredient.all.order(:name), include_hidden: false, input_html: { class: "ingredient-select" } %>
+        <%= f.association :ingredient, collection: Ingredient.all.order(:name), include_hidden: false, input_html: { class: "ingredient-select", id:"mySelect2" } %>
         <%= f.input :description %>
         <div class="d-flex justify-content-center">
           <%= f.submit "Add this ingredient", class: "btn btn-primary"%>

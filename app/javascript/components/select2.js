@@ -2,8 +2,8 @@ import $ from "jquery";
 import select2 from "select2";
 import 'select2/dist/css/select2.css';
 
-$(() => {
-  $('.select2-enable').select2();
+$('#mySelect2').select2({
+  dropdownParent: $('#parent')
 });
 
 const initSelect2 = () => {
